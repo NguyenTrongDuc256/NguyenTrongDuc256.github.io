@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nguyễn Trọng Đức — Frontend Engineer</title>
+  <meta name="description" content="Portfolio của Nguyễn Trọng Đức — Frontend Engineer Middle với 4+ năm kinh nghiệm Angular, TypeScript, Next.js, Vue, React Native." />
+  <meta property="og:title" content="Nguyễn Trọng Đức — Frontend Engineer" />
+  <meta property="og:description" content="Frontend Engineer (4+ Years) chuyên Angular, TypeScript, RxJS/NgRx, performance optimization." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Canvas Starfield -->
+  <canvas id="starfield"></canvas>
+
+  <!-- Ambient Orbs -->
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+
+  <!-- Navigation -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">
+        <span class="logo-bracket">&lt;</span>NTD<span class="logo-bracket">/&gt;</span>
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <a href="mailto:ducnguyentrong19@gmail.com" class="nav-cta">Hire Me</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section id="hero">
+    <div class="hero-content">
+      <div class="hero-badge reveal-up">
+        <span class="badge-dot"></span>
+        Available for opportunities
+      </div>
+      <h1 class="hero-title reveal-up">
+        <span class="title-greeting">Xin chào, tôi là</span>
+        <span class="title-name">Nguyễn Trọng Đức</span>
+      </h1>
+      <div class="hero-role reveal-up">
+        <span class="role-prefix">// </span>
+        <span class="role-text" id="typed-role"></span>
+        <span class="cursor-blink">|</span>
+      </div>
+      <p class="hero-desc reveal-up">
+        Frontend Engineer với <strong>4+ năm kinh nghiệm</strong> xây dựng các nền tảng Admin phức tạp, POS systems và tối ưu hiệu năng. 
+        Chuyên sâu về <strong>Angular</strong>, <strong>TypeScript</strong>, <strong>RxJS/NgRx</strong> và Core Web Vitals.
+      </p>
+      <div class="hero-actions reveal-up">
+        <a href="#experience" class="btn btn-primary">
+          <span>Xem kinh nghiệm</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+        </a>
+        <a href="#contact" class="btn btn-ghost">Liên hệ tôi</a>
+      </div>
+      <div class="hero-stats reveal-up">
+        <div class="stat-item">
+          <span class="stat-num" data-target="4">0</span><span class="stat-suffix">+</span>
+          <span class="stat-label">Năm kinh nghiệm</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num" data-target="15">0</span><span class="stat-suffix">+</span>
+          <span class="stat-label">Dự án hoàn thành</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num" data-target="80">0</span><span class="stat-suffix">%</span>
+          <span class="stat-label">NetSuite thay thế</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual reveal-right">
+      <div class="avatar-container">
+        <div class="avatar-ring ring-1"></div>
+        <div class="avatar-ring ring-2"></div>
+        <div class="avatar-ring ring-3"></div>
+        <div class="avatar-glow"></div>
+        <div class="avatar-placeholder">
+          <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="35" r="20" fill="url(#avatarGrad)"/>
+            <ellipse cx="50" cy="80" rx="30" ry="18" fill="url(#avatarGrad)"/>
+            <defs>
+              <linearGradient id="avatarGrad" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#38bdf8"/>
+                <stop offset="100%" stop-color="#818cf8"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <!-- Floating Tech Tags -->
+        <div class="float-tag tag-1">Angular</div>
+        <div class="float-tag tag-2">TypeScript</div>
+        <div class="float-tag tag-3">RxJS</div>
+        <div class="float-tag tag-4">Vue 3</div>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+      <span>Cuộn xuống</span>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag">01 / About</span>
+        <h2 class="section-title">Về tôi</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-text reveal-left">
+          <p>
+            Tôi là <strong>Nguyễn Trọng Đức</strong>, Frontend Engineer Middle tại Hà Nội với niềm đam mê xây dựng những giao diện người dùng hiệu năng cao và trải nghiệm mượt mà.
+          </p>
+          <p>
+            Tốt nghiệp <strong>Đại học Điện Lực</strong> — Công nghệ Thông tin với GPA <strong>3.3/4.0 (Xuất sắc)</strong>, tôi đã tích lũy 4+ năm kinh nghiệm trong việc phát triển các platform admin phức tạp, hệ thống POS và landing page tối ưu SEO.
+          </p>
+          <p>
+            Hiện tại tôi đang làm việc tại <strong>Vua Nệm</strong> — một trong những hệ thống bán lẻ lớn nhất Việt Nam, nơi tôi chịu trách nhiệm tối ưu Core Web Vitals và phát triển POS Web App thay thế ~80% chức năng NetSuite.
+          </p>
+          <div class="about-info-grid">
+            <div class="info-item">
+              <span class="info-icon">📅</span>
+              <div>
+                <span class="info-label">Ngày sinh</span>
+                <span class="info-value">25/09/2000</span>
+              </div>
+            </div>
+            <div class="info-item">
+              <span class="info-icon">📍</span>
+              <div>
+                <span class="info-label">Địa chỉ</span>
+                <span class="info-value">Hà Nội, Việt Nam</span>
+              </div>
+            </div>
+            <div class="info-item">
+              <span class="info-icon">🎓</span>
+              <div>
+                <span class="info-label">Trường học</span>
+                <span class="info-value">Đại học Điện Lực</span>
+              </div>
+            </div>
+            <div class="info-item">
+              <span class="info-icon">⚡</span>
+              <div>
+                <span class="info-label">GPA</span>
+                <span class="info-value">3.3 / 4.0 — Xuất sắc</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="about-card-stack reveal-right">
+          <div class="glass-card about-card card-main">
+            <div class="card-icon-large">🚀</div>
+            <h3>Performance First</h3>
+            <p>Tối ưu Core Web Vitals, Speed Index đạt ~1s trên Desktop, ~2.5s Mobile</p>
+          </div>
+          <div class="glass-card about-card card-secondary">
+            <div class="card-icon-large">⚙️</div>
+            <h3>Architecture Expert</h3>
+            <p>MVVM, RxJS/NgRx State Management, Component Pattern scalable</p>
+          </div>
+          <div class="glass-card about-card card-tertiary">
+            <div class="card-icon-large">🤖</div>
+            <h3>Automation Driven</h3>
+            <p>n8n, AnyCross, Lark Base Workflow tự động hóa quy trình nội bộ</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS SECTION -->
+  <section id="skills" class="section section-alt">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag">02 / Skills</span>
+        <h2 class="section-title">Kỹ năng chuyên môn</h2>
+      </div>
+      <div class="skills-grid">
+        <!-- Frontend -->
+        <div class="skill-category glass-card reveal-up" style="--delay: 0s">
+          <div class="skill-cat-header">
+            <span class="skill-cat-icon">🖥️</span>
+            <h3>Frontend</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag skill-primary">Angular v8–19</span>
+            <span class="skill-tag skill-primary">TypeScript</span>
+            <span class="skill-tag skill-primary">RxJS / NgRx</span>
+            <span class="skill-tag skill-secondary">Next.js</span>
+            <span class="skill-tag skill-secondary">Vue 3</span>
+            <span class="skill-tag skill-secondary">React Native</span>
+            <span class="skill-tag skill-tertiary">DevExtreme</span>
+            <span class="skill-tag skill-tertiary">Angular Material</span>
+            <span class="skill-tag skill-tertiary">Ant Design</span>
+            <span class="skill-tag skill-tertiary">Tailwind CSS</span>
+          </div>
+          <div class="skill-bars">
+            <div class="skill-bar-item">
+              <span>Angular / TypeScript</span>
+              <div class="bar-track"><div class="bar-fill" data-width="95"></div></div>
+              <span class="bar-pct">95%</span>
+            </div>
+            <div class="skill-bar-item">
+              <span>Vue 3 / Next.js</span>
+              <div class="bar-track"><div class="bar-fill" data-width="80"></div></div>
+              <span class="bar-pct">80%</span>
+            </div>
+            <div class="skill-bar-item">
+              <span>React Native</span>
+              <div class="bar-track"><div class="bar-fill" data-width="70"></div></div>
+              <span class="bar-pct">70%</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Backend & Tools -->
+        <div class="skill-category glass-card reveal-up" style="--delay: 0.1s">
+          <div class="skill-cat-header">
+            <span class="skill-cat-icon">⚙️</span>
+            <h3>Backend & Tools</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag skill-primary">Laravel</span>
+            <span class="skill-tag skill-primary">Filament</span>
+            <span class="skill-tag skill-secondary">SQL</span>
+            <span class="skill-tag skill-secondary">Git</span>
+            <span class="skill-tag skill-tertiary">Agile / Scrum</span>
+            <span class="skill-tag skill-tertiary">Unit Testing</span>
+          </div>
+          <div class="skill-bars">
+            <div class="skill-bar-item">
+              <span>Laravel + Filament</span>
+              <div class="bar-track"><div class="bar-fill" data-width="65"></div></div>
+              <span class="bar-pct">65%</span>
+            </div>
+            <div class="skill-bar-item">
+              <span>SQL / Database</span>
+              <div class="bar-track"><div class="bar-fill" data-width="70"></div></div>
+              <span class="bar-pct">70%</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Automation & Real-time -->
+        <div class="skill-category glass-card reveal-up" style="--delay: 0.2s">
+          <div class="skill-cat-header">
+            <span class="skill-cat-icon">🤖</span>
+            <h3>Automation & Real-time</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag skill-primary">n8n</span>
+            <span class="skill-tag skill-primary">Lark Workflow</span>
+            <span class="skill-tag skill-secondary">AnyCross</span>
+            <span class="skill-tag skill-secondary">Approval Workflow</span>
+            <span class="skill-tag skill-tertiary">OCR Integration</span>
+            <span class="skill-tag skill-tertiary">Mapbox</span>
+          </div>
+          <div class="skill-bars">
+            <div class="skill-bar-item">
+              <span>n8n / Automation</span>
+              <div class="bar-track"><div class="bar-fill" data-width="85"></div></div>
+              <span class="bar-pct">85%</span>
+            </div>
+            <div class="skill-bar-item">
+              <span>Mobile SDK (OCR, Map)</span>
+              <div class="bar-track"><div class="bar-fill" data-width="72"></div></div>
+              <span class="bar-pct">72%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE SECTION -->
+  <section id="experience" class="section">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag">03 / Experience</span>
+        <h2 class="section-title">Kinh nghiệm làm việc</h2>
+      </div>
+      <div class="timeline">
+
+        <!-- Job 1 -->
+        <div class="timeline-item reveal-left">
+          <div class="timeline-marker">
+            <div class="marker-dot active"></div>
+            <div class="marker-line"></div>
+          </div>
+          <div class="timeline-content glass-card">
+            <div class="job-header">
+              <div class="job-info">
+                <h3 class="job-title">Middle Frontend Engineer</h3>
+                <span class="job-company">🛏️ Vua Nệm</span>
+              </div>
+              <div class="job-meta">
+                <span class="job-period">07/2024 — Hiện tại</span>
+                <span class="job-badge current">Current</span>
+              </div>
+            </div>
+            <ul class="job-bullets">
+              <li>Phát triển & tối ưu websites / web apps cho hệ thống bán lẻ quy mô lớn, bổ sung tính năng mới và duy trì hệ thống hiện có</li>
+              <li>Tối ưu <strong>Core Web Vitals & Speed Index</strong> — đạt ~1s Desktop, ~2.5s Mobile</li>
+              <li>Xây dựng <strong>Admin Platform & POS Web App</strong> bằng Angular 16–17 + DevExtreme</li>
+              <li>Phát triển POS Web App thay thế <strong>~80% chức năng NetSuite</strong>, giảm chi phí license đáng kể</li>
+              <li>Tự động hóa quy trình bằng <strong>n8n, AnyCross, Lark Base, Approval Workflow</strong></li>
+            </ul>
+            <div class="job-highlights">
+              <h4>Dự án nổi bật</h4>
+              <div class="highlight-cards">
+                <div class="highlight-card">
+                  <span class="highlight-icon">⚡</span>
+                  <div>
+                    <strong>vuanem.com Optimization</strong>
+                    <p>Cải thiện Core Web Vitals với Responsive Design cho smartphone</p>
+                  </div>
+                </div>
+                <div class="highlight-card">
+                  <span class="highlight-icon">🖥️</span>
+                  <div>
+                    <strong>POS Web App End-to-end</strong>
+                    <p>Quản lý đơn hàng, đồng bộ giá, thanh toán, phân quyền; thay thế NetSuite</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="job-techs">
+              <span class="tech-chip">Angular 16-17</span>
+              <span class="tech-chip">DevExtreme</span>
+              <span class="tech-chip">TypeScript</span>
+              <span class="tech-chip">n8n</span>
+              <span class="tech-chip">RxJS</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Job 2 -->
+        <div class="timeline-item reveal-right">
+          <div class="timeline-marker">
+            <div class="marker-dot"></div>
+            <div class="marker-line"></div>
+          </div>
+          <div class="timeline-content glass-card">
+            <div class="job-header">
+              <div class="job-info">
+                <h3 class="job-title">Frontend Engineer</h3>
+                <span class="job-company">🌊 WAOCON & SG Việt Nam</span>
+              </div>
+              <div class="job-meta">
+                <span class="job-period">01/2023 — 07/2024</span>
+              </div>
+            </div>
+            <ul class="job-bullets">
+              <li>Phát triển web admin, product web apps và landing pages, bổ sung tính năng mới và tái sử dụng code</li>
+              <li>Sử dụng <strong>Angular, Next.js, Vue 3</strong> với focus vào MVVM patterns, HTML/CSS/Bootstrap</li>
+              <li>Mobile development với <strong>React Native</strong>: OCR, Vision Camera, Mapbox</li>
+              <li>Phối hợp với backend <strong>Laravel + Filament</strong> để đảm bảo input validation và tối ưu hiệu năng</li>
+            </ul>
+            <div class="job-highlights">
+              <h4>Dự án nổi bật</h4>
+              <div class="highlight-cards">
+                <div class="highlight-card">
+                  <span class="highlight-icon">🌐</span>
+                  <div>
+                    <strong>marine.landbrain.com</strong>
+                    <p>UI/UX phát triển bằng Vue 3 với Responsive Design</p>
+                  </div>
+                </div>
+                <div class="highlight-card">
+                  <span class="highlight-icon">📱</span>
+                  <div>
+                    <strong>Mobile Delivery App</strong>
+                    <p>Tích hợp OCR, Vision Camera và Mapbox cho real-time features</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="job-techs">
+              <span class="tech-chip">Vue 3</span>
+              <span class="tech-chip">Next.js</span>
+              <span class="tech-chip">Angular</span>
+              <span class="tech-chip">React Native</span>
+              <span class="tech-chip">Laravel</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Job 3 -->
+        <div class="timeline-item reveal-left">
+          <div class="timeline-marker">
+            <div class="marker-dot"></div>
+            <div class="marker-line"></div>
+          </div>
+          <div class="timeline-content glass-card">
+            <div class="job-header">
+              <div class="job-info">
+                <h3 class="job-title">Frontend Developer</h3>
+                <span class="job-company">📚 The Online Management Training Company</span>
+              </div>
+              <div class="job-meta">
+                <span class="job-period">01/2022 — 01/2023</span>
+              </div>
+            </div>
+            <ul class="job-bullets">
+              <li>Phát triển hệ thống giáo dục <strong>KidsOnline</strong> bằng Angular (Phase 1)</li>
+              <li>Xây dựng tính năng quản lý và phân quyền toàn diện</li>
+              <li>Đảm bảo tính khả thi kỹ thuật của UI/UX, tối ưu hiệu năng và validate inputs trước khi submit</li>
+            </ul>
+            <div class="job-techs">
+              <span class="tech-chip">Angular</span>
+              <span class="tech-chip">TypeScript</span>
+              <span class="tech-chip">RxJS</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Job 4 -->
+        <div class="timeline-item reveal-right">
+          <div class="timeline-marker">
+            <div class="marker-dot"></div>
+          </div>
+          <div class="timeline-content glass-card">
+            <div class="job-header">
+              <div class="job-info">
+                <h3 class="job-title">Web Developer (Outsourcing)</h3>
+                <span class="job-company">💻 Nanoweb</span>
+              </div>
+              <div class="job-meta">
+                <span class="job-period">08/2020 — 01/2022</span>
+              </div>
+            </div>
+            <ul class="job-bullets">
+              <li>Thiết kế và triển khai <strong>Responsive UI/UX</strong> cho nhiều website khách hàng</li>
+              <li>Phát triển WordPress themes với focus vào scalability và performance</li>
+              <li>Tích hợp và duy trì giải pháp <strong>WooCommerce</strong> hỗ trợ multi-language (WPML)</li>
+              <li>Hợp tác tối ưu SEO để cải thiện khả năng tìm kiếm và user engagement</li>
+            </ul>
+            <div class="job-highlights">
+              <h4>Dự án nổi bật</h4>
+              <div class="highlight-cards">
+                <div class="highlight-card">
+                  <span class="highlight-icon">🔗</span>
+                  <div>
+                    <strong>vivng.net & tikauito.vn</strong>
+                    <p>Backend Yi framework + UI/UX hoàn chỉnh</p>
+                  </div>
+                </div>
+                <div class="highlight-card">
+                  <span class="highlight-icon">🛒</span>
+                  <div>
+                    <strong>sieuthinganlong.com.vn</strong>
+                    <p>WordPress interface development</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="job-techs">
+              <span class="tech-chip">WordPress</span>
+              <span class="tech-chip">WooCommerce</span>
+              <span class="tech-chip">HTML/CSS</span>
+              <span class="tech-chip">PHP</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS SECTION -->
+  <section id="projects" class="section section-alt">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag">04 / Projects</span>
+        <h2 class="section-title">Dự án tiêu biểu</h2>
+      </div>
+      <div class="projects-grid">
+
+        <div class="project-card glass-card reveal-up" style="--delay: 0s">
+          <div class="project-top">
+            <div class="project-icon">🛏️</div>
+            <div class="project-links">
+              <a href="https://vuanem.com" target="_blank" rel="noopener" class="project-link" title="Xem website">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="project-name">vuanem.com Optimization</h3>
+          <p class="project-desc">Tối ưu Core Web Vitals toàn diện cho trang web bán lẻ lớn. Giảm Speed Index xuống ~1s Desktop, ~2.5s Mobile với responsive design cho smartphone.</p>
+          <div class="project-techs">
+            <span class="tech-mini">Angular</span>
+            <span class="tech-mini">Performance</span>
+            <span class="tech-mini">Core Web Vitals</span>
+          </div>
+        </div>
+
+        <div class="project-card glass-card reveal-up" style="--delay: 0.1s">
+          <div class="project-top">
+            <div class="project-icon">🖥️</div>
+            <div class="project-links"></div>
+          </div>
+          <h3 class="project-name">POS Web App (Vua Nệm)</h3>
+          <p class="project-desc">Hệ thống POS Web App end-to-end thay thế ~80% chức năng NetSuite: quản lý đơn hàng, đồng bộ giá, thanh toán, phân quyền và automation workflows.</p>
+          <div class="project-techs">
+            <span class="tech-mini">Angular 16-17</span>
+            <span class="tech-mini">DevExtreme</span>
+            <span class="tech-mini">n8n</span>
+            <span class="tech-mini">Lark</span>
+          </div>
+        </div>
+
+        <div class="project-card glass-card reveal-up" style="--delay: 0.2s">
+          <div class="project-top">
+            <div class="project-icon">🌊</div>
+            <div class="project-links">
+              <a href="https://marine.landbrain.com" target="_blank" rel="noopener" class="project-link" title="Xem website">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="project-name">marine.landbrain.com</h3>
+          <p class="project-desc">Phát triển UI/UX bằng Vue 3 với responsive design. Áp dụng MVVM patterns và quick adoption of new tech để đảm bảo scalability.</p>
+          <div class="project-techs">
+            <span class="tech-mini">Vue 3</span>
+            <span class="tech-mini">MVVM</span>
+            <span class="tech-mini">Responsive</span>
+          </div>
+        </div>
+
+        <div class="project-card glass-card reveal-up" style="--delay: 0.3s">
+          <div class="project-top">
+            <div class="project-icon">📱</div>
+            <div class="project-links"></div>
+          </div>
+          <h3 class="project-name">Delivery Mobile App</h3>
+          <p class="project-desc">Ứng dụng giao hàng React Native tích hợp OCR Camera để scan, Vision Camera để nhận diện ảnh và Mapbox cho real-time location tracking.</p>
+          <div class="project-techs">
+            <span class="tech-mini">React Native</span>
+            <span class="tech-mini">OCR</span>
+            <span class="tech-mini">Mapbox</span>
+          </div>
+        </div>
+
+        <div class="project-card glass-card reveal-up" style="--delay: 0.4s">
+          <div class="project-top">
+            <div class="project-icon">📚</div>
+            <div class="project-links"></div>
+          </div>
+          <h3 class="project-name">KidsOnline Education System</h3>
+          <p class="project-desc">Hệ thống quản lý giáo dục trực tuyến với Angular, xây dựng tính năng quản lý toàn diện và phân quyền chi tiết cho platform e-learning.</p>
+          <div class="project-techs">
+            <span class="tech-mini">Angular</span>
+            <span class="tech-mini">TypeScript</span>
+            <span class="tech-mini">RxJS</span>
+          </div>
+        </div>
+
+        <div class="project-card glass-card reveal-up" style="--delay: 0.5s">
+          <div class="project-top">
+            <div class="project-icon">🛒</div>
+            <div class="project-links">
+              <a href="https://sieuthinganlong.com.vn" target="_blank" rel="noopener" class="project-link" title="Xem website">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="project-name">sieuthinganlong.com.vn</h3>
+          <p class="project-desc">WordPress e-commerce interface với WooCommerce, tối ưu SEO và multi-language support bằng WPML để tăng traffic và user engagement.</p>
+          <div class="project-techs">
+            <span class="tech-mini">WordPress</span>
+            <span class="tech-mini">WooCommerce</span>
+            <span class="tech-mini">SEO</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag">05 / Contact</span>
+        <h2 class="section-title">Liên hệ với tôi</h2>
+        <p class="section-sub">Tôi luôn sẵn sàng cho những cơ hội mới và thú vị. Hãy kết nối!</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-card glass-card reveal-left">
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 7L2 7"/></svg>
+            </div>
+            <div class="contact-info">
+              <span class="contact-label">Email</span>
+              <a href="mailto:ducnguyentrong19@gmail.com" class="contact-value">ducnguyentrong19@gmail.com</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+            </div>
+            <div class="contact-info">
+              <span class="contact-label">Phone</span>
+              <a href="tel:0981211825" class="contact-value">0981 211 825</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div class="contact-info">
+              <span class="contact-label">Location</span>
+              <span class="contact-value">Hà Nội, Việt Nam</span>
+            </div>
+          </div>
+        </div>
+        <div class="contact-cta reveal-right">
+          <div class="cta-box glass-card">
+            <div class="cta-glow"></div>
+            <h3>Sẵn sàng hợp tác?</h3>
+            <p>Tôi đang tìm kiếm những cơ hội thú vị để đóng góp kỹ năng Frontend Engineering của mình vào các dự án impactful.</p>
+            <a href="mailto:ducnguyentrong19@gmail.com" class="btn btn-primary btn-large" id="contact-btn">
+              <span>Gửi email ngay</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+            </a>
+            <div class="availability">
+              <span class="avail-dot"></span>
+              <span>Đang available — Phản hồi trong 24h</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <span class="logo-bracket">&lt;</span>NTD<span class="logo-bracket">/&gt;</span>
+        </div>
+        <p class="footer-copy">© 2024 Nguyễn Trọng Đức. Built with ❤️ & ☕</p>
+        <p class="footer-sub">Frontend Engineer — Hà Nội, Việt Nam</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
